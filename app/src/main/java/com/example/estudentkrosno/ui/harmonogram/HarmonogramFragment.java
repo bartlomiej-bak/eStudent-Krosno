@@ -16,20 +16,11 @@ import com.example.estudentkrosno.R;
 
 public class HarmonogramFragment extends Fragment {
 
-    private HarmonogramViewModel harmonogramViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        harmonogramViewModel =
-                ViewModelProviders.of(this).get(HarmonogramViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
-        harmonogramViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        textView.setText("Harmonogram zajęć");
         return root;
     }
 }
