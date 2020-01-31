@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     //Changes visible in github TEST//
     //New line
+    //test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
