@@ -24,9 +24,6 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    //Changes visible in github TEST//
-    //New line
-    //asdasda
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
