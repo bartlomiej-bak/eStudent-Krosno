@@ -16,11 +16,11 @@ public class WelcomeActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent mainActivityIntent = new Intent(WelcomeActivity.this, MainActivity.class);
-                startActivity(mainActivityIntent);
+                Intent loginActivityIntent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                startActivity(loginActivityIntent);
                 finish();
             }
-        },2000);
+        },1000);
 
     }
 }

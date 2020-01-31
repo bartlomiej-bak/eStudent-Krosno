@@ -6,11 +6,12 @@
     <string name="nav_header_subtitle">bartlomiej.bak@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Ustawienia</string>
-
+    <string name="action_logout">Wyloguj</string>
     <string name="menu_home">Aktualności</string>
     <string name="menu_gallery">Moje oceny</string>
     <string name="menu_slideshow">Harmonogram zajęć</string>
     <string name="menu_tools">Meteriały do zajęć</string>
     <string name="menu_share">Komunikator</string>
     <string name="menu_send">eLegitymacja</string>
+    <string name="login">Zaloguj się z Google</string>
 </resources>

@@ -24,7 +24,6 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 2000;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Wyślij wiadomość", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
