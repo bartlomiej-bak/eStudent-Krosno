@@ -1,4 +1,6 @@
-package com.example.estudentkrosno.ui.aktulanosci;
+/*
+
+package com.example.estudentkrosno.ui.aktualnosci;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -16,4 +18,4 @@ public class AktualnosciViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
-}
+}*/

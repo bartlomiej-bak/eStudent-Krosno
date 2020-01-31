@@ -1,4 +1,4 @@
-package com.example.estudentkrosno.ui.aktulanosci;
+package com.example.estudentkrosno.ui.aktualnosci;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,20 +16,23 @@ import com.example.estudentkrosno.R;
 
 public class AktualnosciFragment extends Fragment {
 
-    private AktualnosciViewModel aktualnosciViewModel;
+    //private AktualnosciViewModel aktualnosciViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        aktualnosciViewModel =
-                ViewModelProviders.of(this).get(AktualnosciViewModel.class);
+        /*aktualnosciViewModel =
+                ViewModelProviders.of(this).get(AktualnosciViewModel.class);*/
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         final TextView textView = root.findViewById(R.id.text_home);
-        aktualnosciViewModel.getText().observe(this, new Observer<String>() {
+        textView.setText("Aktualności PWSZ");
+        /*aktualnosciViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
+
         return root;
     }
 }
