@@ -1,16 +1,16 @@
-package com.example.estudentkrosno.ui.tools;
+package com.example.estudentkrosno.ui.oceny;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class OcenyViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public OcenyViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is tools fragment");
+        mText.setValue("Moje oceny");
     }
 
     public LiveData<String> getText() {

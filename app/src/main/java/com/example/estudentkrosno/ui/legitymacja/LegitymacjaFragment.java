@@ -1,4 +1,4 @@
-package com.example.estudentkrosno.ui.gallery;
+package com.example.estudentkrosno.ui.legitymacja;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.estudentkrosno.R;
 
-public class GalleryFragment extends Fragment {
+public class LegitymacjaFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private LegitymacjaViewModel legitymacjaViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        legitymacjaViewModel =
+                ViewModelProviders.of(this).get(LegitymacjaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_send, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        legitymacjaViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

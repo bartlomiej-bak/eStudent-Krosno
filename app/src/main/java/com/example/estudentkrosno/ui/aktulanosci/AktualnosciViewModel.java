@@ -1,16 +1,16 @@
-package com.example.estudentkrosno.ui.share;
+package com.example.estudentkrosno.ui.aktulanosci;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class AktualnosciViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public AktualnosciViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("Aktualności");
     }
 
     public LiveData<String> getText() {

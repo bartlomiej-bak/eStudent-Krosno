@@ -1,4 +1,4 @@
-package com.example.estudentkrosno.ui.tools;
+package com.example.estudentkrosno.ui.harmonogram;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.estudentkrosno.R;
 
-public class ToolsFragment extends Fragment {
+public class HarmonogramFragment extends Fragment {
 
-    private ToolsViewModel toolsViewModel;
+    private HarmonogramViewModel harmonogramViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        toolsViewModel =
-                ViewModelProviders.of(this).get(ToolsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_tools, container, false);
-        final TextView textView = root.findViewById(R.id.text_tools);
-        toolsViewModel.getText().observe(this, new Observer<String>() {
+        harmonogramViewModel =
+                ViewModelProviders.of(this).get(HarmonogramViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        harmonogramViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -1,16 +1,16 @@
-package com.example.estudentkrosno.ui.send;
+package com.example.estudentkrosno.ui.materialy;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SendViewModel extends ViewModel {
+public class MaterialyViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SendViewModel() {
+    public MaterialyViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is send fragment");
+        mText.setValue("Materiały do zajęć");
     }
 
     public LiveData<String> getText() {

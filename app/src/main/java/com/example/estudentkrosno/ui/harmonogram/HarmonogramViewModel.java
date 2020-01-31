@@ -1,16 +1,16 @@
-package com.example.estudentkrosno.ui.gallery;
+package com.example.estudentkrosno.ui.harmonogram;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class HarmonogramViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public HarmonogramViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("Harmonogram zajęć");
     }
 
     public LiveData<String> getText() {
