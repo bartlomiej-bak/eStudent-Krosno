@@ -16,20 +16,11 @@ import com.example.estudentkrosno.R;
 
 public class KomunikatorFragment extends Fragment {
 
-    private KomunikatorViewModel komunikatorViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        komunikatorViewModel =
-                ViewModelProviders.of(this).get(KomunikatorViewModel.class);
         View root = inflater.inflate(R.layout.fragment_share, container, false);
         final TextView textView = root.findViewById(R.id.text_share);
-        komunikatorViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        textView.setText("Komunikator");
         return root;
     }
 }

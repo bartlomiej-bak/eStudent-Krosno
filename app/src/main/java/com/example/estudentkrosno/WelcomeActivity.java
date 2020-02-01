@@ -16,7 +16,7 @@ public class WelcomeActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent loginActivityIntent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                Intent loginActivityIntent = new Intent(WelcomeActivity.this, MainActivity.class);
                 startActivity(loginActivityIntent);
                 finish();
             }

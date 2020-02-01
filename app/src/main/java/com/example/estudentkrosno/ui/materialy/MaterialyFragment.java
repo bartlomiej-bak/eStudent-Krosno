@@ -16,20 +16,12 @@ import com.example.estudentkrosno.R;
 
 public class MaterialyFragment extends Fragment {
 
-    private MaterialyViewModel materialyViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        materialyViewModel =
-                ViewModelProviders.of(this).get(MaterialyViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_tools, container, false);
         final TextView textView = root.findViewById(R.id.text_tools);
-        materialyViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        textView.setText("Materialy");
         return root;
     }
 }
