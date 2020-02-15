@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if(account != null){
             String personName = account.getDisplayName();
-            Toast.makeText(LoginActivity.this, "Zalogowano jako: "+personName, Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, "Zalogowano jako : "+personName, Toast.LENGTH_LONG).show();
             progressBar.setVisibility(View.INVISIBLE);
         }
     }
