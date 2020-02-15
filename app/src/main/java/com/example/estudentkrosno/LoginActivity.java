@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            updateUI(currentUser);
             Toast.makeText(LoginActivity.this, "Jesteś już zalogowany", Toast.LENGTH_SHORT).show();
         }else{
             signInButton.setEnabled(true);
@@ -81,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 String username = account.getDisplayName();
                 Toast.makeText(LoginActivity.this, "Zalogowano kontem Google jako "+username, Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account);
+                signInButton.setEnabled(true);
             } catch (ApiException e) {
                 firebaseAuthWithGoogle(null);
             }
@@ -96,8 +96,9 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+                            Toast.makeText(LoginActivity.this, "Firebase Auth OK", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(LoginActivity.this,"Brak połączenia z serwerem", Toast.LENGTH_SHORT);
+                            Toast.makeText(LoginActivity.this,"Firebase Auth NOT OK", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
