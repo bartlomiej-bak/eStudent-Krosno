@@ -6,13 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 
-public class LoginActivity extends AppCompatActivity {
+import com.google.android.gms.common.SignInButton;
 
-    ProgressBar progressBar;
-    Button signInButton;
+public class LoginActivity extends AppCompatActivity {
+    private SignInButton signInButton;
+
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         progressBar = findViewById(R.id.progressBar);
-        signInButton = findViewById(R.id.buttonSignIn);
+        signInButton = findViewById(R.id.signInButton);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override

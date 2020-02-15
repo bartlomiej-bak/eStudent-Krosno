@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1012532595625",
+    "firebase_url": "https://estudent-krosno-1a629.firebaseio.com",
+    "project_id": "estudent-krosno-1a629",
+    "storage_bucket": "estudent-krosno-1a629.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012532595625:android:6add0069f69e4514a992b8",
+        "android_client_info": {
+          "package_name": "com.example.estudentkrosno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012532595625-pv1fhalkgp8di0qr99nn0kja87d654pe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.estudentkrosno",
+            "certificate_hash": "f08ebcde6387f880a2df8da02bd521aab31878f2"
+          }
+        },
+        {
+          "client_id": "1012532595625-lglt1paa1ib3l3t4b0nrpcjc0pv2itrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4ra-OmvsxMbBW8n6Fm0ZMUBo8I8A8lvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012532595625-lglt1paa1ib3l3t4b0nrpcjc0pv2itrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
