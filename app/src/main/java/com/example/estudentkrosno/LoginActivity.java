@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
     private static final int GOOGLE_SIGN = 1;
-    String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
