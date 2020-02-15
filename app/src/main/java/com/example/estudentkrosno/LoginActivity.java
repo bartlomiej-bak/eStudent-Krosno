@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Zalogowano pomyślnie", Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
+                //// Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
                 firebaseAuthWithGoogle(null);
             }
