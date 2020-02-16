@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 String username = account.getDisplayName();
-                Toast.makeText(LoginActivity.this, "Zalogowano jako "+username, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Witaj "+username, Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account);
                 //signInButton.setEnabled(true);
             } catch (ApiException e) {
