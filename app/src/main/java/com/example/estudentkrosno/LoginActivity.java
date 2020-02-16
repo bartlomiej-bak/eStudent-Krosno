@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         progressBar = findViewById(R.id.progressBar);
         signInButton = findViewById(R.id.signInButton);
-        signInButton.setEnabled(false);
+        //signInButton.setEnabled(false);
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -51,18 +51,15 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
-    }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+        //Test on create while login
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
             Toast.makeText(LoginActivity.this, "Jesteś już zalogowany", Toast.LENGTH_SHORT).show();
-        }else{
-            signInButton.setEnabled(true);
+            updateUI(currentUser);
         }
     }
+
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -77,9 +74,9 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 String username = account.getDisplayName();
-                Toast.makeText(LoginActivity.this, "Zalogowano kontem Google jako "+username, Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Zalogowano jako "+username, Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account);
-                signInButton.setEnabled(true);
+                //signInButton.setEnabled(true);
             } catch (ApiException e) {
                 firebaseAuthWithGoogle(null);
             }
@@ -95,9 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
-                            Toast.makeText(LoginActivity.this, "Firebase Auth OK", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(LoginActivity.this,"Firebase Auth NOT OK", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Błąd Firebase", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -105,6 +101,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser fUser){
         progressBar.setVisibility(View.INVISIBLE);
+        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(mainIntent);
     }
 }
 
