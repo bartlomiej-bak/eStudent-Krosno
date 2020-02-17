@@ -4,19 +4,44 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.estudentkrosno.R;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AktualnosciFragment extends Fragment {
 
+    View v;
+    private RecyclerView myRecyclerView;
+    private List<Post> listPost;
+
+    public AktualnosciFragment(){}
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        textView.setText("Aktualności PWSZ");
+        myRecyclerView = root.findViewById(R.id.recyclerView);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(), listPost);
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myRecyclerView.setAdapter(recyclerViewAdapter);
         return root;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        listPost = new ArrayList<>();
+        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
+        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
+        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
+        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
     }
 }
