@@ -6,8 +6,6 @@ public class Post{
     private String desc;
     private int photo;
 
-    public Post(){}
-
     public Post(String title, String desc, int photo) {
         this.title = title;
         this.desc = desc;

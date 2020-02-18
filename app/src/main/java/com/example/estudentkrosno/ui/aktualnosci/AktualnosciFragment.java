@@ -39,9 +39,13 @@ public class AktualnosciFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         listPost = new ArrayList<>();
-        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
-        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
-        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
-        listPost.add(new Post("Tytuł", "Opis", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
     }
 }
