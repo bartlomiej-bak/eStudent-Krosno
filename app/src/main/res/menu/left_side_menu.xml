@@ -13,7 +13,7 @@
             android:icon="@drawable/ic_menu_oceny"
             android:title="@string/menu_gallery" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_harmonogram"
             android:icon="@drawable/ic_menu_harmonogram"
             android:title="@string/menu_slideshow" />
         <item

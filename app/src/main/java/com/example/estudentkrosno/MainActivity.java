@@ -26,6 +26,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
+    TextView username, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -52,14 +55,24 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_harmonogram,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser.getDisplayName();
+
+        username = findViewById(R.id.account_username);
+        email = findViewById(R.id.account_email);
+        //username.setText("Heloł");
+        //email.setText(currentUser.getEmail());
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

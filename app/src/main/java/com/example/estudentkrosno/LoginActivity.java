@@ -55,7 +55,6 @@ public class LoginActivity extends AppCompatActivity {
         //Test on create while login
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Toast.makeText(LoginActivity.this, "Jesteś już zalogowany", Toast.LENGTH_SHORT).show();
             updateUI(currentUser);
         }
     }
@@ -73,10 +72,7 @@ public class LoginActivity extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                String username = account.getDisplayName();
-                Toast.makeText(LoginActivity.this, "Witaj "+username, Toast.LENGTH_SHORT).show();
                 firebaseAuthWithGoogle(account);
-                //signInButton.setEnabled(true);
             } catch (ApiException e) {
                 firebaseAuthWithGoogle(null);
             }
@@ -93,15 +89,17 @@ public class LoginActivity extends AppCompatActivity {
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
-                            Toast.makeText(LoginActivity.this,"Błąd Firebase", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"Brak sieci!", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
     public void updateUI(FirebaseUser fUser){
+        String userName = fUser.getDisplayName();
         progressBar.setVisibility(View.INVISIBLE);
         Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        mainIntent.putExtra(userName, 1);
         startActivity(mainIntent);
     }
 }
