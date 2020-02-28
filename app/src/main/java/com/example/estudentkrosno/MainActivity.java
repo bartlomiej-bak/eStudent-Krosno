@@ -52,11 +52,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_harmonogram,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_aktualnosci, R.id.nav_oceny, R.id.nav_harmonogram,
+                R.id.nav_materialy, R.id.nav_komunikator, R.id.nav_legitymacja)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -71,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
         //username.setText("Heloł");
         //email.setText(currentUser.getEmail());
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

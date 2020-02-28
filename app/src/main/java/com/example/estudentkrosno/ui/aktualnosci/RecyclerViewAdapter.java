@@ -61,8 +61,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.degree);
-            desc = itemView.findViewById(R.id.degree_comments);
+            title = itemView.findViewById(R.id.title);
+            desc = itemView.findViewById(R.id.degree);
             img = itemView.findViewById(R.id.background_degree);
         }
     }

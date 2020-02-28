@@ -12,7 +12,6 @@ public class Post{
         this.photo = photo;
     }
 
-    //Getter
     public String getTitle() {
         return title;
     }
@@ -23,20 +22,5 @@ public class Post{
 
     public int getPhoto() {
         return photo;
-    }
-
-    //Setter
-
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
     }
 }
