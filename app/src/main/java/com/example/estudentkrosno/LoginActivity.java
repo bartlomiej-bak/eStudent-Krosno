@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -24,7 +25,8 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
-    SignInButton signInButton;
+    //SignInButton signInButton;
+    Button signInButton;
     ProgressBar progressBar;
     FirebaseAuth mAuth;
     GoogleSignInClient mGoogleSignInClient;
@@ -43,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override

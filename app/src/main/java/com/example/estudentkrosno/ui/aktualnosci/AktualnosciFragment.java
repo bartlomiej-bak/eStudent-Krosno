@@ -49,8 +49,9 @@ public class AktualnosciFragment extends Fragment {
         listPost = new ArrayList<>();
 
 
+        listPost.add(new Post("Pamiętaj o podstawowych zasadach higieny", "Nie istnieje szczepionka ani skuteczne leczenie przeciwko koronawirusowi. Dlatego należy pamiętać o przestrzeganiu podstawowych zasad zapobiegawczych, które istotnie wpłyną na ograniczenie ryzyka zakażenia", R.drawable.news));
+        listPost.add(new Post("Targi pracy", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
         listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
-        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodow", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
-
+        listPost.add(new Post("Państwowa Wyższa Szkoła Zawodowa", "im. Stanisława Pigonia w Krośnie", R.drawable.news));
     }
 }

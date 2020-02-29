@@ -1,63 +1,57 @@
 package com.example.estudentkrosno.ui.materialy;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.example.estudentkrosno.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import static android.content.ContentValues.TAG;
+import com.google.firebase.firestore.Query;
 
 public class MaterialyFragment extends Fragment {
 
-    private FirebaseAuth mAuth;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private MaterialAdapter materialyAdapter;
+    RecyclerView recyclerViewMaterialy;
 
-    private Button button_add;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_materialy, container, false);
-        button_add = root.findViewById(R.id.button_add_new_file);
-        button_add.setText(currentUser.getDisplayName());
-        String[] data = {"One","Two"};
-
-
-
-        db.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d(TAG, document.getId() + " => " + document.getData());
-
-                            }
-                        } else {
-                            Log.w(TAG, "Error getting documents.", task.getException());
-                        }
-                    }
-                });
-
+        recyclerViewMaterialy = root.findViewById(R.id.materialy_recycler);
         return root;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setUpRecyclerView();
+    }
+
+    private void setUpRecyclerView(){
+        Query query = db.collection("Materialy");
+        FirestoreRecyclerOptions<MaterialModel> options = new FirestoreRecyclerOptions.Builder<MaterialModel>()
+                .setQuery(query, MaterialModel.class)
+                .build();
+
+        materialyAdapter = new MaterialAdapter(options);
+        recyclerViewMaterialy.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewMaterialy.setAdapter(materialyAdapter);
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        materialyAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        materialyAdapter.stopListening();
     }
 }
