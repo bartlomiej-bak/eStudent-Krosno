@@ -32,7 +32,7 @@ public class MaterialAdapter extends FirestoreRecyclerAdapter<MaterialModel, Mat
         materialHolder.buttonPobierz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(materialHolder.textViewNazwa.getContext(),"Pobieranie...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(materialHolder.textViewNazwa.getContext(),"Pobieranie: "+materialModel.getNazwa(),Toast.LENGTH_SHORT).show();
                 downloadFiles(materialHolder.textViewNazwa.getContext(), materialModel.getNazwa(), ".pdf", DIRECTORY_DOWNLOADS, materialModel.getSciezka());
             }
         });
