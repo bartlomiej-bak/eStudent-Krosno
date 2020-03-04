@@ -4,10 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.estudentkrosno.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -40,7 +38,6 @@ public class OcenaAdapter extends FirestoreRecyclerAdapter<OcenaModel, OcenaAdap
             super(itemView);
             textViewSubject = itemView.findViewById(R.id.textFieldPrzedmiot);
             textViewDegree = itemView.findViewById(R.id.textFieldOcena);
-
         }
     }
 }

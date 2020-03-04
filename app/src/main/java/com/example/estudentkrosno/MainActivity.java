@@ -81,10 +81,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            Toast.makeText(this, "Ustawienia", Toast.LENGTH_SHORT).show();
-            return true;
-        }
+
         if (id == R.id.action_logout) {
             signOut();
             return true;
