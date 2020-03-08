@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -27,11 +28,14 @@ public class HarmonogramFragment extends Fragment {
     private StorageReference mStorageRef;
     private StorageReference fileReference;
     private Button downloadFile;
+    private WebView harmWebView;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_harmonogram, container, false);
         mStorageRef = FirebaseStorage.getInstance().getReference();
         downloadFile = root.findViewById(R.id.downloadFile);
+        harmWebView = root.findViewById(R.id.harmonogramWebView);
+        harmWebView.getSettings().setJavaScriptEnabled(true);
         return root;
     }
 
@@ -44,7 +48,16 @@ public class HarmonogramFragment extends Fragment {
                 download();
             }
         });
+        loadUrl();
+         }
+
+    public void loadUrl(){
+        String pdf = "https://firebasestorage.googleapis.com/v0/b/estudent-krosno-1a629.appspot.com/o/harmonogram.pdf?alt=media&token=d407100a-f198-407d-973e-ff9f53777020";
+        harmWebView.getSettings().setJavaScriptEnabled(true);
+        harmWebView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
     }
+
+    //
 
     public void download(){
         fileReference = mStorageRef.child("harmonogram.pdf");

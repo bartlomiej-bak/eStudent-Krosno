@@ -17,8 +17,6 @@ public class LegitymacjaFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_legitymacja, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        textView.setText("Legitymacja");
         return root;
     }
 }
