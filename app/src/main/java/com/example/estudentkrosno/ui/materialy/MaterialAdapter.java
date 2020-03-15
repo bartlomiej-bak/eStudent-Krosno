@@ -46,11 +46,11 @@ public class MaterialAdapter extends FirestoreRecyclerAdapter<MaterialModel, Mat
 
     class MaterialHolder extends RecyclerView.ViewHolder{
 
-        private TextView textViewNazwa;
-        private TextView textViewSciezka;
-        private Button buttonPobierz;
+        private final TextView textViewNazwa;
+        private final TextView textViewSciezka;
+        private final Button buttonPobierz;
 
-        public MaterialHolder(View itemView){
+        private MaterialHolder(View itemView){
             super(itemView);
             textViewNazwa = itemView.findViewById(R.id.materialNazwa);
             textViewSciezka = itemView.findViewById(R.id.materialSciezka);
@@ -58,7 +58,7 @@ public class MaterialAdapter extends FirestoreRecyclerAdapter<MaterialModel, Mat
         }
     }
 
-    public void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
+    private void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
         DownloadManager downloadManager = (DownloadManager) context.
                 getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);

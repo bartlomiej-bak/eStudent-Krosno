@@ -16,7 +16,6 @@ public class LegitymacjaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_legitymacja, container, false);
-        return root;
+        return inflater.inflate(R.layout.fragment_legitymacja, container, false);
     }
 }

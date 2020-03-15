@@ -31,10 +31,10 @@ public class OcenaAdapter extends FirestoreRecyclerAdapter<OcenaModel, OcenaAdap
 
     class OcenaHolder extends RecyclerView.ViewHolder{
 
-        private TextView textViewSubject;
-        private TextView textViewDegree;
+        private final TextView textViewSubject;
+        private final TextView textViewDegree;
 
-        public OcenaHolder(View itemView){
+        private OcenaHolder(View itemView){
             super(itemView);
             textViewSubject = itemView.findViewById(R.id.textFieldPrzedmiot);
             textViewDegree = itemView.findViewById(R.id.textFieldOcena);

@@ -31,9 +31,9 @@ public class MaterialyFragment extends Fragment {
     private StorageReference mStorageRef;
     private StorageReference fileReference;
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
     private MaterialAdapter adapter;
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_materialy, container, false);

@@ -29,7 +29,7 @@ import java.util.Objects;
 
 public class OcenyFragment extends Fragment {
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
     private OcenaAdapter adapter;
     RecyclerView recyclerView;
 

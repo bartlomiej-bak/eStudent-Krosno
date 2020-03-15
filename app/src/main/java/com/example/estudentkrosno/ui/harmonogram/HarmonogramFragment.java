@@ -25,65 +25,22 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
 public class HarmonogramFragment extends Fragment {
 
-    private StorageReference mStorageRef;
-    private StorageReference fileReference;
-    private Button downloadFile;
     private WebView harmWebView;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_harmonogram, container, false);
-        mStorageRef = FirebaseStorage.getInstance().getReference();
-        downloadFile = root.findViewById(R.id.downloadFile);
         harmWebView = root.findViewById(R.id.harmonogramWebView);
-        harmWebView.getSettings().setJavaScriptEnabled(true);
         return root;
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        downloadFile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                download();
-            }
-        });
         loadUrl();
-         }
+    }
 
-    public void loadUrl(){
-        String pdf = "https://firebasestorage.googleapis.com/v0/b/estudent-krosno-1a629.appspot.com/o/harmonogram.pdf?alt=media&token=d407100a-f198-407d-973e-ff9f53777020";
+    private void loadUrl(){
         harmWebView.getSettings().setJavaScriptEnabled(true);
-        harmWebView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=" + pdf);
+        harmWebView.loadUrl("https://drive.google.com/file/d/1qixwY_PA_70HodLkuSjkLi5NcCAtsv_g/view?usp=sharing");
     }
-
-    //
-
-    public void download(){
-        fileReference = mStorageRef.child("harmonogram.pdf");
-        fileReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                String url = uri.toString();
-                downloadFiles(getContext(), "harmonogram", ".pdf", DIRECTORY_DOWNLOADS, url);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getContext(),"Błąd",Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    public void downloadFiles(Context context, String fileName, String fileExtension, String destinationDirectory, String url){
-        DownloadManager downloadManager = (DownloadManager) context.
-                getSystemService(Context.DOWNLOAD_SERVICE);
-        Uri uri = Uri.parse(url);
-        DownloadManager.Request request = new DownloadManager.Request(uri);
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-        request.setDestinationInExternalFilesDir(context,destinationDirectory,fileName + fileExtension);
-        downloadManager.enqueue(request);
-        Toast.makeText(getContext(),"Downloading",Toast.LENGTH_SHORT).show();
-    }
-
 }

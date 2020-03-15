@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="6dp"
+    android:layout_marginTop="8dp"
     android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="#81FFFFFF"
     app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/list_oceny1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/item"
+        android:background="#81FFFFFF"
         android:clickable="true"
         android:focusable="true"
         android:orientation="vertical">
@@ -20,14 +19,12 @@
         <TextView
             android:id="@+id/textViewData"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text="07.03.2020"
             android:textColor="@color/textColor"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonUsun"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -36,7 +33,6 @@
             android:layout_height="25dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
-            android:text="Bartek Bąk"
             android:textColor="@color/textColor"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -52,18 +48,28 @@
             android:adjustViewBounds="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUzytkownik" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewUzytkownik"
+            android:contentDescription="@string/img"
+            />
 
         <TextView
             android:id="@+id/textViewZawartosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:autoText="true"
             android:padding="12dp"
-            android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
             android:textColor="@color/textColor"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+        <Button
+            android:id="@+id/buttonUsun"
+            android:layout_width="31dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:drawable/ic_menu_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

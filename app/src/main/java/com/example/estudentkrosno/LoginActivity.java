@@ -25,11 +25,10 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
 
-    //SignInButton signInButton;
-    Button signInButton;
-    ProgressBar progressBar;
-    FirebaseAuth mAuth;
-    GoogleSignInClient mGoogleSignInClient;
+    private Button signInButton;
+    private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
+    private GoogleSignInClient mGoogleSignInClient;
     private static final int GOOGLE_SIGN = 1;
 
     @Override
@@ -38,7 +37,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         progressBar = findViewById(R.id.progressBar);
         signInButton = findViewById(R.id.signInButton);
-        //signInButton.setEnabled(false);
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))

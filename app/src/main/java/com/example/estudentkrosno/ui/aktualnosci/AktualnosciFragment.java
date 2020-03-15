@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -30,8 +31,8 @@ import java.util.HashMap;
 
 public class AktualnosciFragment extends Fragment {
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    FirebaseAuth mAuth;
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseAuth mAuth;
     private AktualnosciAdapter aktualnosciAdapter;
     private RecyclerView recyclerViewAktualnosci;
     private Button buttonSendNews;
@@ -43,6 +44,7 @@ public class AktualnosciFragment extends Fragment {
         recyclerViewAktualnosci = root.findViewById(R.id.recyclerViewAktualnosci);
         buttonSendNews = root.findViewById(R.id.buttonSendNews);
         editTextNews = root.findViewById(R.id.editTextNews);
+
         return root;
     }
 
@@ -88,6 +90,13 @@ public class AktualnosciFragment extends Fragment {
 
             }
         });
+
+//        aktualnosciAdapter.setOnItemClickListener(new AktualnosciAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+//                Toast.makeText(getContext(),"Pozycja",Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     private void setUpRecyclerView(){
@@ -112,4 +121,14 @@ public class AktualnosciFragment extends Fragment {
         super.onStop();
         aktualnosciAdapter.stopListening();
     }
+
+//    @Override
+//    public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+//        aktualnosciAdapter.setOnItemClickListener(new AktualnosciAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+//                Toast.makeText(getContext(),"Pozycja",Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
 }

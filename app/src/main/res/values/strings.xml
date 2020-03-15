@@ -1,16 +1,23 @@
 <resources>
     <string name="app_name">eStudent Krosno</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Bartłomiej Bąk</string>
     <string name="nav_header_subtitle">bartlomiej.bak@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Ustawienia</string>
     <string name="action_logout">Wyloguj</string>
     <string name="menu_home">Aktualności</string>
     <string name="menu_gallery">Moje oceny</string>
     <string name="menu_slideshow">Harmonogram zajęć</string>
-    <string name="menu_tools">Meteriały do zajęć</string>
-    <string name="menu_share">Komunikator</string>
+    <string name="menu_tools">Materiały do zajęć</string>
+    <string name="menu_share">Więcej informacji</string>
     <string name="menu_send">eLegitymacja</string>
+    <string name="img">img</string>
+    <string name="login_google">Zaloguj się kontem Google</string>
+    <string name="school_name1">Państwowa Wyższa Szkoła Zawodowa</string>
+    <string name="school_name2">im. Stanisława Pigonia w Krośnie</string>
+    <string name="add_news_hint">Dodaj aktualizację...</string>
+    <string name="download_harm">Pobierz harmonogram</string>
+    <string name="legitymacja_title">Legitymacja PWSZ Krosno</string>
+    <string name="phone_num">Tel. 13-43-755-00</string>
+    <string name="fax_num">Fax 13-43-755-11</string>
+    <string name="school_address">Rynek 1 38-400 Krosno</string>
 </resources>
