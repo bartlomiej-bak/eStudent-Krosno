@@ -1,7 +1,6 @@
 package com.example.estudentkrosno.ui.aktualnosci;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +20,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -44,7 +42,6 @@ public class AktualnosciFragment extends Fragment {
         recyclerViewAktualnosci = root.findViewById(R.id.recyclerViewAktualnosci);
         buttonSendNews = root.findViewById(R.id.buttonSendNews);
         editTextNews = root.findViewById(R.id.editTextNews);
-
         return root;
     }
 
@@ -87,16 +84,10 @@ public class AktualnosciFragment extends Fragment {
                 }else {
                     Toast.makeText(getContext(), "Wpisz zawartość posta", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
 
-//        aktualnosciAdapter.setOnItemClickListener(new AktualnosciAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-//                Toast.makeText(getContext(),"Pozycja",Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
     }
 
     private void setUpRecyclerView(){
@@ -122,13 +113,5 @@ public class AktualnosciFragment extends Fragment {
         aktualnosciAdapter.stopListening();
     }
 
-//    @Override
-//    public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-//        aktualnosciAdapter.setOnItemClickListener(new AktualnosciAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-//                Toast.makeText(getContext(),"Pozycja",Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
+
 }
