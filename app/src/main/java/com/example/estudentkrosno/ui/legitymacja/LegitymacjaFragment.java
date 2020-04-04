@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -50,7 +51,8 @@ public class LegitymacjaFragment extends Fragment {
                                         Picasso.get().load(kod).into(codeView);
                                     }
                                 } else {
-                                    Log.w(TAG, "Error getting qr code.", task.getException());
+                                    Log.w(TAG, "Bład wczytania kodu", task.getException());
+                                    Toast.makeText(getContext(), "Bład wczytania kodu", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

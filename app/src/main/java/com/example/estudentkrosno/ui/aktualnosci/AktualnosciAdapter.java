@@ -4,7 +4,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,16 +44,22 @@ public class AktualnosciAdapter extends FirestoreRecyclerAdapter<AktualnosciMode
         private final TextView textViewUzytkownik;
         private final TextView textViewZawartosc;
         private final TextView textViewData;
+        private final Button buttonUsun;
 
         private AktualnosciHolder(View itemView){
             super(itemView);
             textViewUzytkownik = itemView.findViewById(R.id.textViewUzytkownik);
             textViewZawartosc = itemView.findViewById(R.id.textViewZawartosc);
             textViewData = itemView.findViewById(R.id.textViewData);
-            itemView.setOnClickListener(new View.OnClickListener() {
+            buttonUsun = itemView.findViewById(R.id.buttonUsun);
+            buttonUsun.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d("Klik","Klik");
+                    int position = getAdapterPosition();
+                    Log.d("Position", ""+position);
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
+                    }
                 }
             });
         }
@@ -61,7 +69,7 @@ public class AktualnosciAdapter extends FirestoreRecyclerAdapter<AktualnosciMode
         void onItemClick(DocumentSnapshot documentSnapshot, int position);
     }
 
-    private void setOnItemClickListener(OnItemClickListener listener){
+    void setOnItemClickListener(OnItemClickListener listener){
         this.listener = listener;
     }
 }
