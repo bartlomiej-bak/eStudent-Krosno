@@ -86,7 +86,7 @@ public class AktualnosciFragment extends Fragment{
                                 public void onSuccess(DocumentReference documentReference) {
                                     Toast.makeText(getContext(), "Dodano nowy post", Toast.LENGTH_SHORT).show();
                                     editTextNews.setText("");
-
+                                    recyclerViewAktualnosci.smoothScrollToPosition(0);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
