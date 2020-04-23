@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#B11D1D"
+        android:background="#81FFFFFF"
         android:clickable="true"
         android:focusable="true"
         android:longClickable="false"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -53,6 +53,7 @@
             android:id="@+id/materialSciezka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#030303"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/materialNazwa"
             app:layout_constraintTop_toTopOf="parent"
@@ -62,12 +63,12 @@
             android:id="@+id/imageView3"
             android:layout_width="39dp"
             android:layout_height="37dp"
+            android:contentDescription="@string/img"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.511"
-            app:srcCompat="@drawable/pdf"
-            android:contentDescription="@string/img" />
+            app:srcCompat="@drawable/pdf" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

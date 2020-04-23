@@ -18,45 +18,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNews"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buttonSendNews"
-        android:layout_width="35dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="40dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/ic_menu_send"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewAktualnosci"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextNews"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:autofillHints=""
-        android:background="@drawable/edit_text_corners"
-        android:ems="10"
-        android:hint="@string/add_news_hint"
-        android:includeFontPadding="true"
-        android:inputType="textPersonName"
-        android:paddingStart="18dp"
-        android:paddingTop="4dp"
-        android:paddingEnd="14dp"
-        android:paddingBottom="4dp"
-        android:textColor="#DDDDDD"
-        android:textColorHighlight="#F52E2E2E"
-        android:textColorHint="#C5C5C5"
-        android:textColorLink="@color/dark_blue"
-        android:textSize="18sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="#FFFFFF"
+        app:boxStrokeColor="#FFFFFF"
+        app:hintTextColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/buttonSendNews"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="o" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dodaj informację..."
+            android:textColor="#FFFFFF"
+            android:theme="@style/MyEditTextTheme" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

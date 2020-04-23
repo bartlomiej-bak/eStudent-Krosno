@@ -120,7 +120,7 @@ public class AktualnosciFragment extends Fragment{
             public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                 String id = documentSnapshot.getId();
                 Toast.makeText(getContext(),
-                        "Position: " + position, Toast.LENGTH_SHORT).show();
+                        "Post został usunięty", Toast.LENGTH_SHORT).show();
 
                 db.collection("Aktualnosci").document(id)
                         .delete()
